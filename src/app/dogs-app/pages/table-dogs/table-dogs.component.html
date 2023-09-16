@@ -1,0 +1,33 @@
+
+<table class="table" *ngIf="races">
+  <thead>
+    <tr>
+      <th scope="col">Imagen</th>
+      <th scope="col">Nombre de la raza</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Opciones</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of races | keyvalue " >
+      <th scope="row"> <button class="btn-imagen" *ngIf="!breedImages[data.key]" (click)="toggleImageVisibility(data.key)">Mostrar imagen <i class="fa-solid fa-image"></i></button>
+        <div class="card-img" *ngIf="breedImages[data.key] && breedImages[data.key].visible">
+          <img class="img-btn" [src]="breedImages[data.key].url" alt="">
+        </div>
+       </th>
+      <td> {{data.key}} </td>
+      <td >
+        {{ data.value.length }}
+      </td>
+      <td>
+        <button  class="btn-options" [routerLink]="['/dogs/register-dogs']"> Agregar <i class="fa-solid fa-dog"></i> </button>
+        <button  class="btn-options" [routerLink]="['/dogs/list-dogs',data.key]" > Listar <i class="fa-solid fa-list"></i> </button>
+       </td>
+
+    </tr>
+  </tbody>
+</table>
+
+
+

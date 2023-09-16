@@ -1,0 +1,21 @@
+
+
+
+<form class="form" autocomplete="off" [formGroup]="dataForm" (ngSubmit)="onSubmit()">
+  <div class="title">Bienvenido,<br><span>Inscribe tu perrito</span></div>
+  <select  class="form-select input" aria-label="Default select example" formControlName="raza">
+    <option value="" selected>Selecciona la raza</option>
+    <option *ngFor="let breed of races | keyvalue" [value]="breed.key" > {{breed.key | titlecase }} </option>
+  </select>
+  <input formControlName="nombre" type="email" placeholder="Nombre" name="email" class="input">
+
+  <mat-form-field class="custom-form-field">
+    <mat-label>Ingresa los años</mat-label>
+    <input  matInput [matDatepicker]="picker" formControlName="fecha">
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+
+  <button type="submit" class="button-confirm">Guardar →</button>
+</form>

@@ -1,0 +1,34 @@
+
+
+
+<h2> Raza {{ name | titlecase }} </h2>
+
+<table class="table" >
+
+
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre del perro</th>
+      <th scope="col">Fecha de nacimiento</th>
+      <th scope="col">Edad</th>
+      <th scope="col">Opciones</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of listRaces" >
+      <th> {{data.id}} </th>
+      <td> {{data.nombre}}  </td>
+      <td> {{data.fecha | date }}  </td>
+      <td >  </td>
+      <td>
+        <button class="btn-options" [routerLink]="['/dogs/edit',data.id]"> Editar <i class="fa-solid fa-dog"></i> </button>
+        <button class="btn-options"  (click)="deleteDogs()"  routerLink="/dogs/list-dogs" > Eliminar <i class="fa-solid fa-list"></i> </button>
+       </td>
+    </tr>
+  </tbody>
+</table>
+
+
+

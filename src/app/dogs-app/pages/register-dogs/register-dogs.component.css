@@ -1,0 +1,16 @@
+.container-p{
+  width: 300px;
+  height: 550px;
+
+
+}
+
+.container-1{
+  height: 100vh;
+  background-image: url('https://i.ibb.co/pxPKpC3/Post-para-Instagram-Feliz-Cumplea-os-mascota-ilustrado-verde.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
